@@ -21,9 +21,11 @@ namespace HandWave
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
-			SerialBaudrateComboBox.DropDown += new EventHandler(port_UserDrop);
+			SerialPortComboBox.DropDown += new EventHandler(port_UserDrop);
 			WorkingTimeListBox.Click += WorkingTimeListBox_Click;
 			RemoveButton.Enabled = false;
+            GetButton.Enabled = false;
+            SetButton.Enabled = false;
 		}
 
 		private void WorkingTimeListBox_Click(object sender, EventArgs e)
@@ -36,10 +38,10 @@ namespace HandWave
 
 		private void port_UserDrop(object sender, EventArgs e)
 		{
-			SerialBaudrateComboBox.Items.Clear();
+            SerialPortComboBox.Items.Clear();
 			foreach (string s in SerialPort.GetPortNames())
 			{
-				SerialBaudrateComboBox.Items.Add(s);
+                SerialPortComboBox.Items.Add(s);
 			}
 		}
 
@@ -48,5 +50,25 @@ namespace HandWave
 			WorkingTimeListBox.Items.Add(From_dateTimePicker.Value);
 			WorkingTimeListBox.Items.Add(To_dateTimePicker.Value);
 		}
-	}
+
+        private void SerialConnectButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SetButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GetButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RemoveButton_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
